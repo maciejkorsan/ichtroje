@@ -190,7 +190,15 @@ body {
   max-width: 370px;
   width: 100%;
   text-align: center;
-  z-index: 2; }
+  z-index: 2;
+  cursor: pointer;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  will-change: transform; }
+  .button:hover {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02); }
   .button img {
     display: inline-block;
     margin-right: 20px; }
@@ -222,12 +230,8 @@ body {
   width: 100%;
   display: block;
   z-index: 0;
-  bottom: -100px;
-  opacity: 0;
-  transition: all .5s; }
-  .animate > .bird {
-    bottom: 0;
-    opacity: 1; }
+  bottom: 0;
+  left: 0; }
 
 .contact {
   background: #ebebeb; }
@@ -246,7 +250,9 @@ body {
 .boats {
   background-color: #ebebeb;
   position: relative;
-  height: 500px;
+  height: 550px;
+  width: 100%;
+  display: block;
   overflow-x: hidden; }
 
 .boat {
@@ -299,7 +305,8 @@ body {
   -webkit-animation-name: wave;
           animation-name: wave;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite; }
+          animation-iteration-count: infinite;
+  background-position: top center; }
   .wave--first {
     background-image: url("/img/wave-1.png");
     bottom: 100px;

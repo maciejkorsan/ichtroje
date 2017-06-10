@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 83px 0 0;
     @media (max-width: 768px) {
-		padding: 0;
+        padding: 0;
     }
 }
 
@@ -24,9 +24,9 @@ body {
     padding: 15px;
     &--flex {
         display: flex;
-    	@media (max-width: 768px) {
-			display: block;
-    	}
+        @media (max-width: 768px) {
+            display: block;
+        }
     }
 }
 
@@ -44,10 +44,10 @@ body {
         align-items: center;
         width: 100%;
         justify-content: center;
-    	@media (max-width: 768px) {
-			display: block;
-			margin: 20px 0 0;
-    	}
+        @media (max-width: 768px) {
+            display: block;
+            margin: 20px 0 0;
+        }
     }
     &__list {
         list-style-type: none;
@@ -55,9 +55,9 @@ body {
         padding: 0;
         display: flex;
         align-items: center;
-    	@media (max-width: 768px) {
-    		display: block;
-    	}
+        @media (max-width: 768px) {
+            display: block;
+        }
     }
     &__link {
         font-family: Teko;
@@ -192,6 +192,12 @@ body {
     width: 100%;
     text-align: center;
     z-index: 2;
+    cursor: pointer;
+    transition: transform 0.2s ease-in;
+    will-change: transform;
+    &:hover {
+        transform: scale(1.02);
+    }
     // tak nie robimy
     img {
         display: inline-block;
@@ -222,21 +228,10 @@ body {
     position: absolute;
     width: 100%;
     display: block;
-    z-index: 0;
-    bottom: -100px;
-    opacity: 0;
-    transition: all .5s;
-
-    .animate > &{
-        bottom: 0;
-        opacity: 1;
-    }
-
+    z-index: 0; 
+    bottom: 0;
+    left: 0;
 }
-
-
-
-
 
 .contact {
     background: $gallery;
@@ -252,85 +247,79 @@ body {
     }
 }
 
-.boats{
+.boats {
     background-color: $gallery;
     position: relative;
-    height: 500px;
+    height: 550px;
+    width: 100%;
+    display: block;
     overflow-x: hidden;
 }
 
-.boat{
+.boat {
     position: absolute;
     transform-origin: bottom center;
     // transform: rotate(-24deg);
     animation-name: boat;
     animation-iteration-count: infinite;
-
-    &--first{
+    &--first {
         right: 70%;
         bottom: 230px;
         animation-duration: 6s;
     }
-    &--second{
+    &--second {
         bottom: 80px;
         left: 60%;
         animation-duration: 4s;
     }
 }
 
-@keyframes boat{
-    0%{
+@keyframes boat {
+    0% {
         transform: rotate(-24deg);
     }
-    50%{
+    50% {
         transform: rotate(-2deg);
     }
-    100%{
+    100% {
         transform: rotate(-24deg);
     }
 }
 
-
-.wave{
-
+.wave {
     width: 200%;
     height: 200px;
     margin-left: -50%;
     background-repeat: repeat-x;
     position: absolute;
-
     animation-name: wave;
     animation-iteration-count: infinite;
-
-    &--first{
+    background-position: top center;
+    &--first {
         background-image: url('/img/wave-1.png');
         bottom: 100px;
         animation-duration: 4.5s;
     }
-    &--second{
+    &--second {
         background-image: url('/img/wave-2.png');
         bottom: 50px;
         animation-duration: 4s;
     }
-    &--third{
+    &--third {
         background-image: url('/img/wave-3.png');
         bottom: 0;
         animation-duration: 3.5s;
     }
-
 }
 
-@keyframes wave{
-    0%{
+@keyframes wave {
+    0% {
         transform: translateX(50px);
     }
-    50%{
+    50% {
         transform: translateX(0);
     }
-    100%{
+    100% {
         transform: translateX(50px);
     }
 }
-
-
-
