@@ -219,10 +219,15 @@ body {
 
 .bird {
   position: absolute;
-  bottom: 0;
   width: 100%;
   display: block;
-  z-index: 0; }
+  z-index: 0;
+  bottom: -100px;
+  opacity: 0;
+  transition: all .5s; }
+  .animate > .bird {
+    bottom: 0;
+    opacity: 1; }
 
 .contact {
   background: #ebebeb; }
@@ -237,3 +242,98 @@ body {
     -webkit-column-break-inside: avoid;
             break-inside: avoid;
     margin: 20px 0; }
+
+.boats {
+  background-color: #ebebeb;
+  position: relative;
+  height: 500px;
+  overflow-x: hidden; }
+
+.boat {
+  position: absolute;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-animation-name: boat;
+          animation-name: boat;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
+  .boat--first {
+    right: 70%;
+    bottom: 230px;
+    -webkit-animation-duration: 6s;
+            animation-duration: 6s; }
+  .boat--second {
+    bottom: 80px;
+    left: 60%;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s; }
+
+@-webkit-keyframes boat {
+  0% {
+    -webkit-transform: rotate(-24deg);
+            transform: rotate(-24deg); }
+  50% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg); }
+  100% {
+    -webkit-transform: rotate(-24deg);
+            transform: rotate(-24deg); } }
+
+@keyframes boat {
+  0% {
+    -webkit-transform: rotate(-24deg);
+            transform: rotate(-24deg); }
+  50% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg); }
+  100% {
+    -webkit-transform: rotate(-24deg);
+            transform: rotate(-24deg); } }
+
+.wave {
+  width: 200%;
+  height: 200px;
+  margin-left: -50%;
+  background-repeat: repeat-x;
+  position: absolute;
+  -webkit-animation-name: wave;
+          animation-name: wave;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
+  .wave--first {
+    background-image: url("/img/wave-1.png");
+    bottom: 100px;
+    -webkit-animation-duration: 4.5s;
+            animation-duration: 4.5s; }
+  .wave--second {
+    background-image: url("/img/wave-2.png");
+    bottom: 50px;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s; }
+  .wave--third {
+    background-image: url("/img/wave-3.png");
+    bottom: 0;
+    -webkit-animation-duration: 3.5s;
+            animation-duration: 3.5s; }
+
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px); }
+  50% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+  100% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px); } }
+
+@keyframes wave {
+  0% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px); }
+  50% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+  100% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px); } }

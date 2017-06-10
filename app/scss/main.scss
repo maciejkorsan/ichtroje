@@ -220,11 +220,23 @@ body {
 
 .bird {
     position: absolute;
-    bottom: 0;
     width: 100%;
     display: block;
     z-index: 0;
+    bottom: -100px;
+    opacity: 0;
+    transition: all .5s;
+
+    .animate > &{
+        bottom: 0;
+        opacity: 1;
+    }
+
 }
+
+
+
+
 
 .contact {
     background: $gallery;
@@ -239,3 +251,86 @@ body {
         margin: 20px 0;
     }
 }
+
+.boats{
+    background-color: $gallery;
+    position: relative;
+    height: 500px;
+    overflow-x: hidden;
+}
+
+.boat{
+    position: absolute;
+    transform-origin: bottom center;
+    // transform: rotate(-24deg);
+    animation-name: boat;
+    animation-iteration-count: infinite;
+
+    &--first{
+        right: 70%;
+        bottom: 230px;
+        animation-duration: 6s;
+    }
+    &--second{
+        bottom: 80px;
+        left: 60%;
+        animation-duration: 4s;
+    }
+}
+
+@keyframes boat{
+    0%{
+        transform: rotate(-24deg);
+    }
+    50%{
+        transform: rotate(-2deg);
+    }
+    100%{
+        transform: rotate(-24deg);
+    }
+}
+
+
+.wave{
+
+    width: 200%;
+    height: 200px;
+    margin-left: -50%;
+    background-repeat: repeat-x;
+    position: absolute;
+
+    animation-name: wave;
+    animation-iteration-count: infinite;
+
+    &--first{
+        background-image: url('/img/wave-1.png');
+        bottom: 100px;
+        animation-duration: 4.5s;
+    }
+    &--second{
+        background-image: url('/img/wave-2.png');
+        bottom: 50px;
+        animation-duration: 4s;
+    }
+    &--third{
+        background-image: url('/img/wave-3.png');
+        bottom: 0;
+        animation-duration: 3.5s;
+    }
+
+}
+
+@keyframes wave{
+    0%{
+        transform: translateX(50px);
+    }
+    50%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(50px);
+    }
+}
+
+
+
