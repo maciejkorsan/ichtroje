@@ -1,3 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Teko&subset=latin-ext");
+* {
+  box-sizing: border-box; }
+
+html {
+  margin: 0;
+  padding: 0; }
+
 body {
-  background: #FF7346;
-  color: #fff; }
+  font-family: 'Lato';
+  margin: 0;
+  padding: 83px 0 0; }
+
+.container {
+  max-width: 1194px;
+  margin: 0 auto;
+  padding: 15px; }
+  .container--flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+
+.navigation {
+  height: 83px;
+  background: #fff;
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .navigation__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .navigation__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .navigation__link {
+    font-family: Teko;
+    font-size: 26px;
+    color: #5A5A5A;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px; }
+    .navigation__link--active {
+      color: #7b5457;
+      text-decoration: underline; }
+    .navigation__link--hidden {
+      opacity: 0;
+      visibility: hidden; }
+
+.hero {
+  height: 100vh;
+  min-height: 400px;
+  background: url("/img/bg.png") top center;
+  background-size: cover; }
+  .hero__header {
+    margin: 80px 0 0 100px;
+    color: #fff;
+    font-family: Teko;
+    font-weight: normal; }
+    @media (max-width: 768px) {
+      .hero__header {
+        margin: 0; } }
+  .hero__first-line {
+    display: block;
+    float: left;
+    font-size: 56px;
+    line-height: 56px;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    background: #454955; }
+  .hero__second-line {
+    display: block;
+    clear: left;
+    float: left;
+    font-size: 36px;
+    line-height: 36px;
+    background: #627184;
+    padding: 10px 20px; }
